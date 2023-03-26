@@ -11,7 +11,7 @@ formEl.addEventListener('submit', clickOnSubmitBtn);
 messageEl.addEventListener('input', _.debounce(getMessageValue, 1000));
 inputEl.addEventListener('input', _.debounce(getInputValue, 1000));
 
-if (parseFormObject.email !== null || parseFormObject.message !== null) {
+if (FORM_OBJECT !== null) {
   inputEl.value = `${parseFormObject.email}`;
   messageEl.value = `${parseFormObject.message}`;
 }
