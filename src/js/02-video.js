@@ -3,14 +3,10 @@ var _ = require('lodash');
 
 const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
-let videoStartTime;
-try {
-  const startVideo = localStorage.getItem('videoStart');
+let videoStartTime = 0;
+const startVideo = localStorage.getItem('videoStart');
+if (startVideo) {
   videoStartTime = JSON.parse(startVideo);
-} catch (error) {
-  videoStartTime = 0;
-  console.log(error.name); // "SyntaxError"
-  console.log(error.message); // Unexpected token W in JSON at position 0
 }
 player.setCurrentTime(videoStartTime);
 
