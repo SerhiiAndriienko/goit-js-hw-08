@@ -13,9 +13,6 @@ messageEl.addEventListener('input', _.throttle(getMessageValue, 500));
 inputEl.addEventListener('input', _.throttle(getInputValue, 500));
 
 if (FORM_OBJECT) {
-  console.log(parseFormObject.email);
-  console.log(parseFormObject.message);
-
   inputEl.value = `${parseFormObject.email}`;
   messageEl.value = `${parseFormObject.message}`;
 }
